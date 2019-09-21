@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
+import FacebookLoginButton from '../../components/facebook/FacebookLoginButton';
+
 import reactLogo from './react-logo.png';
 import './LandingNavbar.css';
 
@@ -9,14 +11,14 @@ class LandingNavbar extends React.Component {
   render() {
     return (
       <section>
-        <nav className="navbar navbar-expand-md bg-dark navbar-dark">
+        <nav className="navbar navbar-expand-md fixed-top">
 
           <NavLink exact to="/">
             <img src={reactLogo} width="60" height="40" alt="" />
           </NavLink>
 
           <NavLink exact className="navbar-brand" to="/">
-            {this.props.appName}
+            COMPARTE SKILL
           </NavLink>
 
           {/*   Toggler/collapsibe Button */}
@@ -28,9 +30,7 @@ class LandingNavbar extends React.Component {
           <div className="collapse navbar-collapse" id="collapsibleNavbar">
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
-                <NavLink className="navbar-brand form-inline" activeClassName="active" to="/login">
-                  Login
-                </NavLink>
+                <FacebookLoginButton history={this.props.history}/>
               </li>
             </ul>
           </div>

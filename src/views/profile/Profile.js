@@ -8,7 +8,7 @@ class Profile extends React.Component {
     console.log(this.props)
     return (
       <section>
-        <HomeNavbar appName="Comparte Skill" />
+        <HomeNavbar/>
 
         <h1> Profile </h1>
         <p> {params.id} </p>

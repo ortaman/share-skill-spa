@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   BrowserRouter as Router,
@@ -7,7 +8,6 @@ import {
 } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import Landing from './views/landing/Landing';
-import Login from './views/login/Login';
 import Search from './views/search/Search';
 import Matches from './views/matches/Matches';
 import Profile from './views/profile/Profile';
@@ -21,7 +21,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => (
       render={(props) => (
         localStorage.getItem('Token')
         ? <Component {...props} />
-        : <Redirect to={{pathname: '/login', state: {from: props.location}}} />
+        : <Redirect to={{pathname: '/', state: {from: props.location}}} />
   )} />
 )
 
@@ -29,7 +29,6 @@ const routing = (
   <Router>
     <Switch>
       <Route exact path="/" component={Landing} />
-      <Route path="/login" component={Login} />
       <PrivateRoute path="/search" component={Search} />
       <PrivateRoute path="/matches" component={Matches} />
       <PrivateRoute path="/profile/:id" component={Profile} />

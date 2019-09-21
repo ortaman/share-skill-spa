@@ -8,7 +8,7 @@ class Search extends React.Component {
     console.log(this.props)
     return (
       <section>
-        <HomeNavbar appName="Comparte Skill" />
+        <HomeNavbar/>
 
         <h1> Searching </h1>
         <p> {params.id} </p>

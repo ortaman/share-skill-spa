@@ -1,3 +1,11 @@
-.active {
-   color: red !important;
+nav {
+   background-color: rgba(0, 0, 0, 0.8);
+ }
+
+.navbar-brand.active {
+   color: rgb(255, 194, 68);
+}
+
+.navbar-brand:hover {
+   color: #d6d31f;
 }

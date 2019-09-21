@@ -1,20 +1,18 @@
 import React from 'react';
-import {
-  Navbar,
-  Nav,
-} from 'react-bootstrap';
+import {Navbar, Nav} from 'react-bootstrap';
 
 
 class HomeNavbar extends React.Component {
 
     onLogoutClick(event) {
-      localStorage.removeItem('Token')
+      localStorage.removeItem('Token');
+      window.FB.logout();
     }
 
     render() {
         return (
           <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="/search">{this.props.appName}</Navbar.Brand>
+            <Navbar.Brand href="/search"> COMPARTE SKILL </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
             <Navbar.Collapse id="responsive-navbar-nav">
