@@ -21,9 +21,9 @@ class HomeNavbar extends React.Component {
 
               <Nav>
                 <Nav.Link href="/search"> Buscar </Nav.Link>
-                <Nav.Link href="/matches"> Matches </Nav.Link>
+                <Nav.Link href="/matches"> Contactos </Nav.Link>
                 <Nav.Link href="/profile/1"> Perfil </Nav.Link>
-                <Nav.Link href="/Logout" onClick={this.onLogoutClick}> Logout </Nav.Link>
+                <Nav.Link href="/Logout" onClick={this.onLogoutClick}> Salir </Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>

@@ -25,7 +25,7 @@ class Landing extends Component {
                 alt="First slide"
               />
               <Carousel.Caption>
-                <h3>First slide label</h3>
+                <h3> Busca, Contacta y Compartan habilidades </h3>
                 <p> </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -37,7 +37,7 @@ class Landing extends Component {
               />
 
               <Carousel.Caption>
-                <h3>Second slide label</h3>
+              <h3> Busca, Contacta y Compartan habilidades </h3>
                 <p> </p>
               </Carousel.Caption>
             </Carousel.Item>
@@ -49,7 +49,7 @@ class Landing extends Component {
               />
 
               <Carousel.Caption>
-                <h3>Third slide label</h3>
+                <h3> Busca, Contacta y Compartan habilidades </h3>
                 <p> </p>
               </Carousel.Caption>
             </Carousel.Item>
