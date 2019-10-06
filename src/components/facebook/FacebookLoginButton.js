@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
+import { UserService } from '../../_services/UserService';
 
 
 export default class FacebookLoginButton extends Component {
@@ -26,12 +27,21 @@ export default class FacebookLoginButton extends Component {
   }
 
   statusChangeCallback = (response) => {
-    console.log(response);
-
     if(response.status === "connected"){
 
+      var data = {
+        'provider': 'facebook',
+        'token': response.authResponse.accessToken
+      }
+
+      UserService.obtainJWT(data)
+      .then(data => {
+          console.log(data);
+          localStorage.setItem('Token', data.token);
+          this.props.history.push("/matches");
+      });
+
       localStorage.setItem('Token', response.accessToken);
-      this.props.history.push("/matches");
     }
     else if (response.status === 'not_authorized') {
       console.log("Please log into this app.");
@@ -47,13 +57,12 @@ export default class FacebookLoginButton extends Component {
   login = () => {
     window.FB.login(
       this.statusChangeCallback, 
-      {scope: 'public_profile'},
+      {scope: 'public_profile, email, user_birthday, user_gender, user_location, user_posts'},
       {auth_type: 'reauthenticate'});
   }
 
   logout() {
-    localStorage.removeItem('Token');
-    window.FB.logout();
+    UserService.logout();
   }
 
   render() {
